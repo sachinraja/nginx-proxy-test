@@ -1,0 +1,16 @@
+services:
+  proxy1:
+    build:
+      dockerfile: proxy1.Dockerfile
+    ports:
+      - '8000:80'
+    cpus: 2
+  proxy2:
+    build:
+      dockerfile: proxy2.Dockerfile
+    cpus: 2
+  web:
+    build:
+      dockerfile: web.Dockerfile
+    cpus: 2
+    command: node server.mjs
